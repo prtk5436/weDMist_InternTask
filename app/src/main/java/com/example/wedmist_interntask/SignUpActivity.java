@@ -51,8 +51,17 @@ public class SignUpActivity extends AppCompatActivity {
                 dob = etDOB.getText().toString().trim();
                 if (email.isEmpty() || password.isEmpty() || Cpassword.isEmpty() || name.isEmpty() || dob.isEmpty()) {
                     Toast.makeText(SignUpActivity.this, "please enter all details", Toast.LENGTH_LONG).show();
-                } else {
-                    if (password.equals(Cpassword)) {
+                } else if (password.length() < 6) {
+                    etPassword.setError("password minimum contain 6 character");
+                    etPassword.requestFocus();
+                } else if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+                    etEMail.setError("please enter valid email address");
+                    etEMail.requestFocus();
+                } else if (!email.equals("") && etPassword.getText().toString().length() >= 6 &&
+                        android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+                    // do  your action
+
+                    if (Cpassword.equals(password)) {
                         Boolean result = mydbHelper.checkUser(email);
                         if (result == false) {
                             Boolean resultREG = mydbHelper.insertData(email, password, name, dob);
@@ -72,7 +81,8 @@ public class SignUpActivity extends AppCompatActivity {
                             Toast.makeText(SignUpActivity.this, "user alresdy aexists", Toast.LENGTH_LONG).show();
                         }
                     } else {
-                        etPassword.setError("password not match");
+                        etCPassword.setError("password not match");
+                        etCPassword.requestFocus();
                     }
 
 
