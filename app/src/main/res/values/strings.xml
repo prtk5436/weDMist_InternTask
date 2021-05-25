@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">weDMist_InternTask</string>
+    <string name="log_out">Log Out</string>
+    <string name="welcome">Welcome</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="dob">DOB</string>
+    <string name="name">Name</string>
+    <string name="todo">TODO</string>
+    <string name="please_enter_credentials_to_login">please enter credentials to login</string>
+    <string name="enter_email">Enter email</string>
+    <string name="don_t_have_account_sign_up">Don\'t Have Account? Sign Up</string>
+    <string name="login">Login</string>
+    <string name="back">Back</string>
+    <string name="new_user">New User</string>
+    <string name="please_enter_all_details">please enter all details</string>
+    <string name="enter_your_name">Enter your Name</string>
+    <string name="enter_your_email">Enter your Email</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="register">Register</string>
+</resources>
